@@ -1,0 +1,30 @@
+name: iOS starter workflow
+
+on:
+  push:
+    branches: 
+    - main
+  pull_request:
+    - main 
+
+jobs:
+  build:
+    name: Build and Test default scheme using any available iPhone simulator
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        destination: ['platform=iOS Simulator,OS=15.2.1,name=iPhone 12 Pro Max']
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+
+      - name: Build
+        env:
+          destination: ${{ matrix.destination }}
+        run: |
+          xcodebuild clean build -project CICDDemo.xcodeproj -scheme CICDDemo -destination "$(destination)" CODE _SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+      - name: Test
+        env:
+          destination: ${{ matrix.destination }}
+        run: |
+          xcodebuild clean build -project CICDDemo.xcodeproj -scheme CICDDemo -destination "$(destination)" CODE _SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO

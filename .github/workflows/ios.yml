@@ -20,12 +20,12 @@ jobs:
         run: pod install
       - name: Build
         run: |
-          xcodebuild clean build -project CICDDemo.xcodeproj -scheme CICDDemo -destination "['platform=iOS Simulator,OS=15.2,name=iPhone 12 Pro Max']" CODE _SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+          xcodebuild clean build -project CICDDemo.xcodeproj -scheme CICDDemo -destination "platform=iOS Simulator,name=iPhone 11 Pro" CODE _SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
         env:
           destination: ${{ matrix.destination }}
 
       - name: Test
         run: |
-          xcodebuild clean build -project CICDDemo.xcodeproj -scheme CICDDemo -destination "$(destination)" CODE _SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+          xcodebuild clean test -project CICDDemo.xcodeproj -scheme CICDDemo -destination "platform=iOS Simulator,name=iPhone 11 Pro" CODE _SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
         env:
           destination: ${{ matrix.destination }}

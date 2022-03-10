@@ -6,6 +6,7 @@ target 'CICDDemo' do
   use_frameworks!
 
   # Pods for CICDDemo
+  pod 'DKImagePickerController'
 
   target 'CICDDemoTests' do
     inherit! :search_paths

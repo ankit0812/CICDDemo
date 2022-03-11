@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9F76648327CE182800D4291B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F76648227CE182800D4291B /* AppDelegate.swift */; };
-		9F76648527CE182800D4291B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F76648427CE182800D4291B /* SceneDelegate.swift */; };
 		9F76648727CE182800D4291B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F76648627CE182800D4291B /* ViewController.swift */; };
 		9F76648A27CE182800D4291B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F76648827CE182800D4291B /* Main.storyboard */; };
 		9F76648C27CE182900D4291B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F76648B27CE182900D4291B /* Assets.xcassets */; };
@@ -47,7 +46,6 @@
 		998D01B7744D4D518A7697B2 /* Pods-CICDDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CICDDemoTests.release.xcconfig"; path = "Target Support Files/Pods-CICDDemoTests/Pods-CICDDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		9F76647F27CE182800D4291B /* CICDDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CICDDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F76648227CE182800D4291B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9F76648427CE182800D4291B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9F76648627CE182800D4291B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9F76648927CE182800D4291B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F76648B27CE182900D4291B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -130,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				9F76648227CE182800D4291B /* AppDelegate.swift */,
-				9F76648427CE182800D4291B /* SceneDelegate.swift */,
 				9F76648627CE182800D4291B /* ViewController.swift */,
 				9F76648827CE182800D4291B /* Main.storyboard */,
 				9F76648B27CE182900D4291B /* Assets.xcassets */,
@@ -178,7 +175,7 @@
 				9F76647B27CE182800D4291B /* Sources */,
 				9F76647C27CE182800D4291B /* Frameworks */,
 				9F76647D27CE182800D4291B /* Resources */,
-				0083D8EC7D224F062425E35E /* [CP] Embed Pods Frameworks */,
+				B6ED1B51E37FED70B20A2389 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -216,7 +213,7 @@
 				9F76649B27CE182900D4291B /* Sources */,
 				9F76649C27CE182900D4291B /* Frameworks */,
 				9F76649D27CE182900D4291B /* Resources */,
-				DAE7DE7D95C9EF4BAFCE1D6F /* [CP] Embed Pods Frameworks */,
+				00EFB40428C839796C12D99C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -299,21 +296,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0083D8EC7D224F062425E35E /* [CP] Embed Pods Frameworks */ = {
+		00EFB40428C839796C12D99C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CICDDemo/Pods-CICDDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-CICDDemo-CICDDemoUITests/Pods-CICDDemo-CICDDemoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CICDDemo/Pods-CICDDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-CICDDemo-CICDDemoUITests/Pods-CICDDemo-CICDDemoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CICDDemo/Pods-CICDDemo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CICDDemo-CICDDemoUITests/Pods-CICDDemo-CICDDemoUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7BC3CB9202FA97945E1F3103 /* [CP] Check Pods Manifest.lock */ = {
@@ -360,21 +357,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DAE7DE7D95C9EF4BAFCE1D6F /* [CP] Embed Pods Frameworks */ = {
+		B6ED1B51E37FED70B20A2389 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CICDDemo-CICDDemoUITests/Pods-CICDDemo-CICDDemoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-CICDDemo/Pods-CICDDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CICDDemo-CICDDemoUITests/Pods-CICDDemo-CICDDemoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-CICDDemo/Pods-CICDDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CICDDemo-CICDDemoUITests/Pods-CICDDemo-CICDDemoUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CICDDemo/Pods-CICDDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E0B9DDEECE562A87890A1B52 /* [CP] Check Pods Manifest.lock */ = {
@@ -408,7 +405,6 @@
 			files = (
 				9F76648727CE182800D4291B /* ViewController.swift in Sources */,
 				9F76648327CE182800D4291B /* AppDelegate.swift in Sources */,
-				9F76648527CE182800D4291B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

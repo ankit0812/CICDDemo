@@ -1,0 +1,26 @@
+name: iOS starter workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+      - name: Install Dependencies
+        run: |
+          cd Example
+          pod install --repo-update
+        shell: bash
+      - uses: ty0x2333/cocoapods-action@master
+        with:
+          additional_build_params: -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.0'
+          additional_lint_params: --private
+      - name: Build
+        run: |
+          xcodebuild clean build -project CICDDemo.xcodeproj -scheme CICDDemo -destination "platform=iOS Simulator,name=iPhone 11 Pro" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+      - name: Test
+        run: |
+          xcodebuild clean test -project CICDDemo.xcodeproj -scheme CICDDemo -destination "platform=iOS Simulator,name=iPhone 11 Pro" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO

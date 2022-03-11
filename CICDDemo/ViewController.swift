@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import DKImagePickerController
+// import DKImagePickerController
 
 class ViewController: UIViewController {
 

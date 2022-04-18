@@ -13,6 +13,14 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 # Available Actions
 
+### install_pods
+
+```sh
+[bundle exec] fastlane install_pods
+```
+
+Install cocoapods
+
 ### archive
 
 ```sh

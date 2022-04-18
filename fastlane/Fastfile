@@ -15,8 +15,20 @@
 
 default_platform(:ios)
 
+  # desc "Install cocoapods"
+  # lane :install_pods do
+  #   cocoapods(
+  #       clean: true,
+  #       use_bundle_exec: false
+  # )
+  # end
   desc "Archive ipa"
   lane :archive do
+    # cocoapods(repo_update: true)
+    cocoapods(
+        clean: true,
+        use_bundle_exec: false
+    )
     xcodebuild(
       archive: true,
       archive_path: "./build-dir/CICDDemo.xcarchive",

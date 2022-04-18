@@ -37,4 +37,8 @@ default_platform(:ios)
       destination: "generic/platform=iOS",
       xcargs: "CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO"
     )
+    zip(
+      path: "./build-dir/CICDDemo.xcarchive",
+      output_path: "./build-dir/CICDDemo.xcarchive.zip"
+    )
 end

@@ -1,0 +1,28 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+  desc "Archive ipa"
+  lane :archive do
+    xcodebuild(
+      archive: true,
+      archive_path: "./build-dir/CICDDemo.xcarchive",
+      scheme: "CICDDemo",
+      workspace: "CICDDemo.xcworkspace",
+      destination: "generic/platform=iOS",
+      xcargs: "CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO"
+    )
+end
